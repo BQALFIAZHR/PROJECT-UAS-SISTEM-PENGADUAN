@@ -129,4 +129,5 @@ Mengedit judul atau deskripsi laporan yang sudah ada.
 
 ### Protected Route (Uji Keamanan)
 Mencoba mengakses data tanpa Token, sistem harus menolak akses (Unauthorized).
-<img width="1920" height="1080" alt="PROTECTED ROUTE" src="https://github.com/user-attachments/assets/0f229604-d8a6-450e-b79b-b5ef21e3c022" />
+<img width="1920" height="1080" alt="PROTECTED ROUTE" src="https://github.com/user-attachments/assets/0bef2d89-da56-43f8-834a-a29623546da1" />
+
