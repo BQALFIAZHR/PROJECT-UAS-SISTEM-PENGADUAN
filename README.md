@@ -99,7 +99,36 @@ Gunakan akun ini untuk menguji fitur memproses laporan dan update status:
 
 ---
 
-## 7. Penjelasan Uji API
+## 7. Daftar Endpoint API
+
+Base URL: `http://localhost:5000/api`
+
+Berikut adalah daftar lengkap endpoint yang tersedia di backend. Pastikan menyertakan **Header** `Authorization: Bearer <token>` untuk endpoint yang diproteksi.
+
+### 🔐 Autentikasi
+| Method | Endpoint | Deskripsi | Akses |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/auth/register` | Mendaftarkan akun baru (Mahasiswa/Admin) | Public |
+| `POST` | `/auth/login` | Login dan mendapatkan JWT Token | Public |
+
+### 👤 Fitur Mahasiswa (User)
+| Method | Endpoint | Deskripsi | Akses |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/complaints` | Membuat laporan pengaduan baru | 🔐 Token User |
+| `GET` | `/complaints/my` | Mengambil daftar riwayat laporan saya | 🔐 Token User |
+| `GET` | `/complaints/:id` | Melihat detail satu laporan spesifik | 🔐 Token User |
+| `PUT` | `/complaints/:id` | Mengedit judul/deskripsi laporan (jika status pending) | 🔐 Token User |
+
+### 👮 Fitur Admin & Publik
+| Method | Endpoint | Deskripsi | Akses |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/complaints/admin/all` | Melihat seluruh laporan masuk dari semua user | 🔐 Token Admin |
+| `POST` | `/complaints/admin/process/:id` | Mengubah status (Proses/Selesai) & Input bukti | 🔐 Token Admin |
+| `GET` | `/complaints/public/news` | Berita/Galeri perbaikan fasilitas (Public) | 🔐 Token User/Admin |
+
+---
+
+## 8. Penjelasan Uji API
 
 Berikut adalah dokumentasi pengujian REST API menggunakan Postman untuk memastikan backend berjalan dengan baik sesuai prinsip CRUD.
 
