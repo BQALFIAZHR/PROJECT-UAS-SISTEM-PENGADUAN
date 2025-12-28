@@ -2,10 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Login from '../views/Login.vue';
 import Dashboard from '../views/Dashboard.vue';
 import ComplaintForm from '../views/ComplaintForm.vue';
-// 👇👇👇 JANGAN LUPA DUA BARIS INI 👇👇👇
-import ComplaintDetail from '../views/ComplaintDetail.vue'; // <--- TAMBAHKAN INI
-import EditComplaint from '../views/EditComplaint.vue';     // <--- TAMBAHKAN INI
-import AdminDashboard from '../views/AdminDashboard.vue'; // IMPORT INI
+import ComplaintDetail from '../views/ComplaintDetail.vue'; 
+import EditComplaint from '../views/EditComplaint.vue';     
+import AdminDashboard from '../views/AdminDashboard.vue'; 
 import NewsFeed from '../views/NewsFeed.vue';
 
 const routes = [
@@ -55,12 +54,12 @@ const router = createRouter({
     routes
 });
 
-// Middleware Frontend (Proteksi Halaman)
+
 router.beforeEach((to, from, next) => {
     const token = localStorage.getItem('token');
     
     if (to.meta.requiresAuth && !token) {
-        next('/'); // Kalau gak ada token, tendang ke Login
+        next('/'); 
     } else {
         next();
     }
