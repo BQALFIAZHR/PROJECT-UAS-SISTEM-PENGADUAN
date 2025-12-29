@@ -160,3 +160,52 @@ Mengedit judul atau deskripsi laporan yang sudah ada.
 Mencoba mengakses data tanpa Token, sistem harus menolak akses (Unauthorized).
 <img width="1920" height="1080" alt="PROTECTED ROUTE" src="https://github.com/user-attachments/assets/0bef2d89-da56-43f8-834a-a29623546da1" />
 
+## 9. Penjelasan ERD (Entity Relationship Diagram)
+
+Sistem ini menggunakan database MySQL dengan relasi antar tabel sebagai berikut:
+
+### 🗂️ Daftar Tabel
+
+#### 1. Tabel `users`
+Menyimpan data pengguna aplikasi (Mahasiswa & Admin).
+* **id** (PK): Integer, Auto Increment.
+* **username**: Varchar (Unik).
+* **password**: Varchar (Hashed).
+* **full_name**: Varchar.
+* **role**: Enum ('user', 'admin').
+
+#### 2. Tabel `categories`
+Menyimpan jenis kategori pengaduan untuk pengelompokan laporan.
+* **id** (PK): Integer, Auto Increment.
+* **name**: Varchar (Contoh: "Fasilitas Rusak", "Akademik").
+* **description**: Text.
+* **icon**: Varchar.
+* **priority_level**: Integer.
+* **created_at**: Datetime.
+
+#### 3. Tabel `complaints` (Tabel Transaksi Utama)
+Menyimpan semua data laporan pengaduan yang masuk.
+* **id** (PK): Integer, Auto Increment.
+* **user_id** (FK): Relasi ke tabel `users`.
+* **category_id** (FK): Relasi ke tabel `categories`.
+* **ticket_number**: Integer (Nomor unik tiket).
+* **title**: Varchar.
+* **description**: Text.
+* **report_date**: Date.
+* **status**: Enum ('pending', 'proses', 'selesai').
+* **response_message**: Text (Tanggapan admin).
+* **evidence_photo**: Varchar (URL foto bukti perbaikan).
+* **resolved_at**: Datetime (Tanggal selesai).
+
+---
+
+### 🔗 Hubungan Relasi (Relationships)
+
+1.  **Users ➔ Complaints (One-to-Many)**
+    * *Satu User* bisa membuat *Banyak Complaint*.
+    * Setiap *Complaint* dimiliki oleh *Satu User*.
+
+2.  **Categories ➔ Complaints (One-to-Many)**
+    * *Satu Kategori* bisa memiliki *Banyak Complaint*.
+    * Setiap *Complaint* hanya memiliki *Satu Kategori*.
+
