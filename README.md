@@ -166,6 +166,9 @@ Sistem ini menggunakan database MySQL dengan relasi antar tabel sebagai berikut:
 
 ### 🗂️ Daftar Tabel
 
+<img width="990" height="811" alt="ERD PROJECT-UAS drawio" src="https://github.com/user-attachments/assets/11816437-1889-4050-b89d-26da9a714ef5" />
+
+
 #### 1. Tabel `users`
 Menyimpan data pengguna aplikasi (Mahasiswa & Admin).
 * **id** (PK): Integer, Auto Increment.
