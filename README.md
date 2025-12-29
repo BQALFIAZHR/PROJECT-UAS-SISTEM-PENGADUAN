@@ -178,13 +178,14 @@ Menyimpan data pengguna aplikasi (Mahasiswa & Admin).
 * **role**: Enum ('user', 'admin').
 
 #### 2. Tabel `categories`
-Menyimpan jenis kategori pengaduan untuk pengelompokan laporan.
+Menyimpan jenis kategori pengaduan beserta aturan penanganannya.
 * **id** (PK): Integer, Auto Increment.
-* **name**: Varchar (Contoh: "Fasilitas Rusak", "Akademik").
-* **description**: Text.
-* **icon**: Varchar.
-* **priority_level**: Integer.
-* **created_at**: Datetime.
+* **name**: Varchar (Contoh: "Fasilitas Rusak").
+* **department**: Varchar (Departemen penanggung jawab, misal: "Sarpras").
+* **priority_level**: Integer (Tingkat urgensi, misal 1-5).
+* **sla_days**: Integer (Target hari penyelesaian ).
+* **is_active**: Boolean (Status apakah kategori ini masih aktif).
+* **created_at**: Datetime (Tanggal kategori dibuat).
 
 #### 3. Tabel `complaints` (Tabel Transaksi Utama)
 Menyimpan semua data laporan pengaduan yang masuk.
