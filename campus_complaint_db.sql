@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2025 at 12:56 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Generation Time: Dec 30, 2025 at 05:15 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -93,7 +93,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `full_name`, `role`, `created_at`) VALUES
 (1, 'mhs1', '$2b$10$A30Ry4McuzTLhMF3atVlB.L1Hq26nrl.evmdYLPtjOabXcnlSngFW', 'Budi Santoso', 'mahasiswa', '2025-12-24 09:38:20'),
-(3, 'admin', '$2b$10$vHf4RXcwrSvS7rFSrxR/ouiniNV/QM6hbRCYPuYIMMNXPoIwQ5PCe', 'Admin Kampus', 'admin', '2025-12-24 15:39:52');
+(3, 'admin', '$2b$10$vHf4RXcwrSvS7rFSrxR/ouiniNV/QM6hbRCYPuYIMMNXPoIwQ5PCe', 'Admin Kampus', 'admin', '2025-12-24 15:39:52'),
+(4, 'Putra', '$2b$10$tRjTQyzNZBNF5Cq6vYF4KuNVIU1SgWW/JyLgHBsVaY0tA12KJQtxO', 'Putra Heryan', 'mahasiswa', '2025-12-30 04:09:28');
 
 --
 -- Indexes for dumped tables
@@ -134,13 +135,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `complaints`
 --
 ALTER TABLE `complaints`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
